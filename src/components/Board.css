@@ -1,0 +1,24 @@
+.board {
+  display: flex;
+  width: 80vw;
+  height: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  outline: 5px solid gray;
+  background-color: whitesmoke;
+}
+
+.column {
+  width: 12.5%;
+}
+
+.row {
+  height: 12.5%;
+  outline: 1px solid gray;
+}
+
+.column:nth-child(even) .row:nth-child(odd),
+.column:nth-child(odd) .row:nth-child(even) {
+  background-color: gray;
+}

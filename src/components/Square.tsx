@@ -1,7 +1,11 @@
 import React from "react";
 
-function Square() {
-  return <div className="square"></div>;
+export interface SquareProps {
+  position: string;
 }
+
+const Square = ({ position }: SquareProps): JSX.Element => {
+  return <div className="square"></div>;
+};
 
 export default Square;

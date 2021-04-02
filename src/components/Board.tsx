@@ -11,6 +11,14 @@ function Board() {
   const [getFirstPosition, setFirstPosition] = useState(-1);
   const [getFirstPositionValue, setFirstPositionValue] = useState("");
 
+  const validateMove = (
+    start: number,
+    end: number,
+    board: Array<number>
+  ): boolean => {
+    return false;
+  };
+
   const movePiece = (position: number): void => {
     const positions = getBoardPositions.slice();
     const value = positions[position];

@@ -5,7 +5,6 @@ import "./Square.css";
 export interface SquareProps {
   position: number;
   value: string;
-  // getSquarePosition: () => { position: number; value: string };
   getSquarePosition: (position: number) => void;
 }
 

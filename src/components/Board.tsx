@@ -44,6 +44,7 @@ function Board() {
         getBoardPositions
       )
     ) {
+      setFirstPosition(-1);
       positions[position] = getFirstPositionValue;
       positions[getFirstPosition] = null;
       setBoardPositions(positions);
@@ -59,6 +60,7 @@ function Board() {
             position={0}
             value={getBoardPositions[0]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -66,6 +68,7 @@ function Board() {
             position={8}
             value={getBoardPositions[8]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -73,6 +76,7 @@ function Board() {
             position={16}
             value={getBoardPositions[16]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -80,6 +84,7 @@ function Board() {
             position={24}
             value={getBoardPositions[24]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -87,6 +92,7 @@ function Board() {
             position={32}
             value={getBoardPositions[32]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -94,6 +100,7 @@ function Board() {
             position={40}
             value={getBoardPositions[40]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -101,6 +108,7 @@ function Board() {
             position={48}
             value={getBoardPositions[48]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -108,6 +116,7 @@ function Board() {
             position={56}
             value={getBoardPositions[56]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
       </div>
@@ -117,6 +126,7 @@ function Board() {
             position={1}
             value={getBoardPositions[1]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -124,6 +134,7 @@ function Board() {
             position={9}
             value={getBoardPositions[9]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -131,6 +142,7 @@ function Board() {
             position={17}
             value={getBoardPositions[17]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -138,6 +150,7 @@ function Board() {
             position={25}
             value={getBoardPositions[25]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -145,6 +158,7 @@ function Board() {
             position={33}
             value={getBoardPositions[33]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -152,6 +166,7 @@ function Board() {
             position={41}
             value={getBoardPositions[41]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -159,6 +174,7 @@ function Board() {
             position={49}
             value={getBoardPositions[49]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -166,6 +182,7 @@ function Board() {
             position={57}
             value={getBoardPositions[57]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
       </div>
@@ -175,6 +192,7 @@ function Board() {
             position={2}
             value={getBoardPositions[2]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -182,6 +200,7 @@ function Board() {
             position={10}
             value={getBoardPositions[10]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -189,6 +208,7 @@ function Board() {
             position={18}
             value={getBoardPositions[18]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -196,6 +216,7 @@ function Board() {
             position={26}
             value={getBoardPositions[26]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -203,6 +224,7 @@ function Board() {
             position={34}
             value={getBoardPositions[34]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -210,6 +232,7 @@ function Board() {
             position={42}
             value={getBoardPositions[42]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -217,6 +240,7 @@ function Board() {
             position={50}
             value={getBoardPositions[50]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -224,6 +248,7 @@ function Board() {
             position={58}
             value={getBoardPositions[58]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
       </div>
@@ -233,6 +258,7 @@ function Board() {
             position={3}
             value={getBoardPositions[3]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -240,6 +266,7 @@ function Board() {
             position={11}
             value={getBoardPositions[11]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -247,6 +274,7 @@ function Board() {
             position={19}
             value={getBoardPositions[19]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -254,6 +282,7 @@ function Board() {
             position={27}
             value={getBoardPositions[27]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -261,6 +290,7 @@ function Board() {
             position={35}
             value={getBoardPositions[35]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -268,6 +298,7 @@ function Board() {
             position={43}
             value={getBoardPositions[43]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -275,6 +306,7 @@ function Board() {
             position={51}
             value={getBoardPositions[51]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -282,6 +314,7 @@ function Board() {
             position={59}
             value={getBoardPositions[59]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
       </div>
@@ -291,6 +324,7 @@ function Board() {
             position={4}
             value={getBoardPositions[4]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -298,6 +332,7 @@ function Board() {
             position={12}
             value={getBoardPositions[12]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -305,6 +340,7 @@ function Board() {
             position={20}
             value={getBoardPositions[20]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -312,6 +348,7 @@ function Board() {
             position={28}
             value={getBoardPositions[28]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -319,6 +356,7 @@ function Board() {
             position={36}
             value={getBoardPositions[36]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -326,6 +364,7 @@ function Board() {
             position={44}
             value={getBoardPositions[44]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -333,6 +372,7 @@ function Board() {
             position={52}
             value={getBoardPositions[52]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -340,6 +380,7 @@ function Board() {
             position={60}
             value={getBoardPositions[60]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
       </div>
@@ -349,6 +390,7 @@ function Board() {
             position={5}
             value={getBoardPositions[5]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -356,6 +398,7 @@ function Board() {
             position={13}
             value={getBoardPositions[13]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -363,6 +406,7 @@ function Board() {
             position={21}
             value={getBoardPositions[21]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -370,6 +414,7 @@ function Board() {
             position={29}
             value={getBoardPositions[29]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -377,6 +422,7 @@ function Board() {
             position={37}
             value={getBoardPositions[37]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -384,6 +430,7 @@ function Board() {
             position={45}
             value={getBoardPositions[45]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -391,6 +438,7 @@ function Board() {
             position={53}
             value={getBoardPositions[53]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -398,6 +446,7 @@ function Board() {
             position={61}
             value={getBoardPositions[61]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
       </div>
@@ -407,6 +456,7 @@ function Board() {
             position={6}
             value={getBoardPositions[6]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -414,6 +464,7 @@ function Board() {
             position={14}
             value={getBoardPositions[14]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -421,6 +472,7 @@ function Board() {
             position={22}
             value={getBoardPositions[22]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -428,6 +480,7 @@ function Board() {
             position={30}
             value={getBoardPositions[30]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -435,6 +488,7 @@ function Board() {
             position={38}
             value={getBoardPositions[38]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -442,6 +496,7 @@ function Board() {
             position={46}
             value={getBoardPositions[46]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -449,6 +504,7 @@ function Board() {
             position={54}
             value={getBoardPositions[54]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -456,6 +512,7 @@ function Board() {
             position={62}
             value={getBoardPositions[62]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
       </div>
@@ -465,6 +522,7 @@ function Board() {
             position={7}
             value={getBoardPositions[7]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -472,6 +530,7 @@ function Board() {
             position={15}
             value={getBoardPositions[15]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -479,6 +538,7 @@ function Board() {
             position={23}
             value={getBoardPositions[23]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -486,6 +546,7 @@ function Board() {
             position={31}
             value={getBoardPositions[31]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -493,6 +554,7 @@ function Board() {
             position={39}
             value={getBoardPositions[39]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -500,6 +562,7 @@ function Board() {
             position={47}
             value={getBoardPositions[47]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -507,6 +570,7 @@ function Board() {
             position={55}
             value={getBoardPositions[55]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
         <div className="row">
@@ -514,6 +578,7 @@ function Board() {
             position={63}
             value={getBoardPositions[63]}
             getSquarePosition={movePiece}
+            selected={getFirstPosition}
           />
         </div>
       </div>

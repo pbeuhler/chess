@@ -5,23 +5,28 @@ import { ChessPiece } from "../pieces/types";
 import "./Square.css";
 
 export interface SquareProps {
-  position: number;
-  value: ChessPiece | null;
   getSquarePosition: (position: number) => void;
+  position: number;
+  selected: number;
+  value: ChessPiece | null;
 }
 
 const Square = ({
-  position,
-  value,
   getSquarePosition,
+  position,
+  selected,
+  value,
 }: SquareProps): JSX.Element => {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     getSquarePosition(position);
   };
 
   return (
-    <button onClick={handleClick}>
-      <div>{position}</div>
+    <button
+      onClick={handleClick}
+      className={selected === position ? "selected" : ""}
+    >
+      <div className={`square-${position}`}>{position}</div>
       {value && value.symbol}
     </button>
   );

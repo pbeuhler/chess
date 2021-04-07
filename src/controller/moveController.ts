@@ -3,7 +3,6 @@ import { PieceType } from "../pieces/BasePiece";
 import {ChessPiece} from "../pieces/types"
 
 export function isValidMove(piece: ChessPiece, isWhitesTurn: boolean, start: number, end: number, board: Array<ChessPiece|null>): boolean {
-  console.log('isValidMove')
   if(piece.isWhite && !isWhitesTurn) {
     return false;
   }
@@ -37,6 +36,25 @@ function validatePawn(piece: ChessPiece, start: number, end: number, board: Arra
   }
 
   // repeat for black
+  else {
+    // basic move
+    if(start - end === -8 ){
+      console.log('black moves 1')
+      return true;
+    }
+    // first move
+    else if(INITIAL_POSITION[start] === board[start] && start - end === -16 ){
+      console.log('black moves 2')
+      return true;
+    }
+    // capturing
+    else if((board[end] && board[end]?.isWhite) && (start - end === 7 )) {
 
+    }
+
+    // Queen me
+
+    // en passant
+  }
   return true;
 }

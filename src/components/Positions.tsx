@@ -1,4 +1,10 @@
-import React from "react";
+import { Bishop } from "../pieces/Bishop";
+import { King } from "../pieces/King";
+import { Knight } from "../pieces/Knight";
+import { Pawn } from "../pieces/Pawn";
+import { Queen } from "../pieces/Queen";
+import { Rook } from "../pieces/Rook";
+import { ChessPiece } from "../pieces/types";
 
 const CHESS_MAPPING = [
   "a8",
@@ -73,38 +79,38 @@ interface Position {
   piece: string;
 }
 
-let emptyArray = Array(64).fill(null);
-emptyArray[0] = "R";
-emptyArray[1] = "N";
-emptyArray[2] = "B";
-emptyArray[3] = "Q";
-emptyArray[4] = "K";
-emptyArray[5] = "B";
-emptyArray[6] = "N";
-emptyArray[7] = "R";
-emptyArray[8] = "P";
-emptyArray[9] = "P";
-emptyArray[10] = "P";
-emptyArray[11] = "P";
-emptyArray[12] = "P";
-emptyArray[13] = "P";
-emptyArray[14] = "P";
-emptyArray[15] = "P";
-emptyArray[48] = "P";
-emptyArray[49] = "P";
-emptyArray[50] = "P";
-emptyArray[51] = "P";
-emptyArray[52] = "P";
-emptyArray[53] = "P";
-emptyArray[54] = "P";
-emptyArray[55] = "P";
-emptyArray[56] = "R";
-emptyArray[57] = "N";
-emptyArray[58] = "B";
-emptyArray[59] = "Q";
-emptyArray[60] = "K";
-emptyArray[61] = "B";
-emptyArray[62] = "N";
-emptyArray[63] = "R";
+let emptyArray = Array<ChessPiece | null>(64).fill(null);
+emptyArray[0] = new Rook(false);
+emptyArray[1] = new Knight(false);
+emptyArray[2] = new Bishop(false);
+emptyArray[3] = new Queen(false);
+emptyArray[4] = new King(false);
+emptyArray[5] = new Bishop(false);
+emptyArray[6] = new Knight(false);
+emptyArray[7] = new Rook(false);
+emptyArray[8] = new Pawn(false);
+emptyArray[9] = new Pawn(false);
+emptyArray[10] = new Pawn(false);
+emptyArray[11] = new Pawn(false);
+emptyArray[12] = new Pawn(false);
+emptyArray[13] = new Pawn(false);
+emptyArray[14] = new Pawn(false);
+emptyArray[15] = new Pawn(false);
+emptyArray[48] = new Pawn(true);
+emptyArray[49] = new Pawn(true);
+emptyArray[50] = new Pawn(true);
+emptyArray[51] = new Pawn(true);
+emptyArray[52] = new Pawn(true);
+emptyArray[53] = new Pawn(true);
+emptyArray[54] = new Pawn(true);
+emptyArray[55] = new Pawn(true);
+emptyArray[56] = new Rook(true);
+emptyArray[57] = new Knight(true);
+emptyArray[58] = new Bishop(true);
+emptyArray[59] = new Queen(true);
+emptyArray[60] = new King(true);
+emptyArray[61] = new Bishop(true);
+emptyArray[62] = new Knight(true);
+emptyArray[63] = new Rook(true);
 
 export const INITIAL_POSITION = emptyArray;

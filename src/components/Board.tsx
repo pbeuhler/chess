@@ -3,31 +3,49 @@ import React, { useState } from "react";
 import "./Board.css";
 import { INITIAL_POSITION } from "./Positions";
 import Square from "./Square";
+import { isValidMove } from "../controller/moveController";
+import { ChessPiece } from "../pieces/types";
 
 function Board() {
   const [getBoardPositions, setBoardPositions] = useState(INITIAL_POSITION);
-  // const [getIsWhitesTurn, setIsWhitesTurn] = useState(true);
+  const [getIsWhitesTurn, setIsWhitesTurn] = useState(true);
   const [getIsFirstClick, setIsFirstClick] = useState(true);
   const [getFirstPosition, setFirstPosition] = useState(-1);
-  const [getFirstPositionValue, setFirstPositionValue] = useState("");
+  const [
+    getFirstPositionValue,
+    setFirstPositionValue,
+  ] = useState<ChessPiece | null>(null);
 
   const validateMove = (
+    piece: ChessPiece,
     start: number,
     end: number,
-    board: Array<number>
+    board: Array<ChessPiece | null>
   ): boolean => {
-    return false;
+    return isValidMove(piece, getIsWhitesTurn, start, end, board);
   };
 
   const movePiece = (position: number): void => {
     const positions = getBoardPositions.slice();
-    const value = positions[position];
+    // if this is the first click, store the necessary info
     if (getIsFirstClick) {
+      // store the starting point for the move
       setFirstPosition(position);
-      setFirstPositionValue(value);
-    } else {
+      // easy access to the piece being moved for second click
+      setFirstPositionValue(positions[position]);
+    }
+    // if this is the second click, and move valid, update board
+    else if (
+      getFirstPositionValue &&
+      validateMove(
+        getFirstPositionValue,
+        getFirstPosition,
+        position,
+        getBoardPositions
+      )
+    ) {
       positions[position] = getFirstPositionValue;
-      positions[getFirstPosition] = "";
+      positions[getFirstPosition] = null;
       setBoardPositions(positions);
     }
     setIsFirstClick(!getIsFirstClick);

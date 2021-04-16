@@ -24,10 +24,12 @@ const Square = ({
   return (
     <button
       onClick={handleClick}
-      className={selected === position ? "selected" : ""}
+      className={`square ${selected === position ? "selected" : ""}`}
     >
       <div className={`square-${position}`}>{position}</div>
-      {value && value.symbol}
+      <div className={value?.isWhite ? "white" : "black"}>
+        {value && value.symbol}
+      </div>
     </button>
   );
 };

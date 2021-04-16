@@ -12,6 +12,14 @@ input[type="reset"] {
   height: 100%;
 }
 
+.square {
+  font-weight: bold;
+}
+
 .selected {
   background-color: green;
+}
+
+.white {
+  color: pink;
 }

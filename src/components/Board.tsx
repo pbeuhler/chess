@@ -50,6 +50,7 @@ function Board() {
       setBoardPositions(positions);
     }
     setIsFirstClick(!getIsFirstClick);
+    // setIsWhitesTurn(!getIsWhitesTurn);
   };
 
   return (

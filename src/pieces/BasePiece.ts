@@ -4,7 +4,7 @@ export enum PieceType {
   Knight,
   Bishop,
   Queen,
-  King
+  King,
 }
 
 export class BasePiece {

@@ -28,15 +28,18 @@ function Board() {
   const movePiece = (position: number): void => {
     const positions = getBoardPositions.slice();
     // if this is the first click, store the necessary info
-    if (getIsFirstClick) {
+    if (getIsFirstClick && positions[position] !== null) {
       // store the starting point for the move
       setFirstPosition(position);
       // easy access to the piece being moved for second click
       setFirstPositionValue(positions[position]);
+      setIsFirstClick(!getIsFirstClick);
     }
     // if this is the second click, and move valid, update board
     else if (
+      !getIsFirstClick &&
       getFirstPositionValue &&
+      position !== getFirstPosition &&
       validateMove(
         getFirstPositionValue,
         getFirstPosition,
@@ -48,8 +51,12 @@ function Board() {
       positions[position] = getFirstPositionValue;
       positions[getFirstPosition] = null;
       setBoardPositions(positions);
+      setIsFirstClick(!getIsFirstClick);
+    } else {
+      setFirstPosition(-1);
+      setFirstPositionValue(null);
+      setIsFirstClick(true);
     }
-    setIsFirstClick(!getIsFirstClick);
     // setIsWhitesTurn(!getIsWhitesTurn);
   };
 

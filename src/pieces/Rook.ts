@@ -9,17 +9,21 @@ export class Rook extends BasePiece {
 }
 
 export function validateRook(
+  piece: ChessPiece,
   start: number,
   end: number,
   board: Array<ChessPiece | null>
 ) {
-  console.log("lets go detect");
+  let validMove = false;
   if (validMoveColumn(start, end)) {
-    return !detectCollision(true, start, end, board);
+    validMove = !detectCollision(true, start, end, board);
   } else if (validateMoveRow(start, end)) {
-    return !detectCollision(false, start, end, board);
+    validMove = !detectCollision(false, start, end, board);
   }
-  return false;
+  if (validMove && board[end]) {
+    validMove = capturePiece(piece, end, board);
+  }
+  return validMove;
 }
 
 function detectCollision(
@@ -33,14 +37,14 @@ function detectCollision(
   [min, max] = start > end ? [end, start] : [start, end];
   // if moving in a column, increment by 8, otherwise by 1
   const incrementValue = moveColumn ? 8 : 1;
-  let squareToAdd = (min += incrementValue);
+  let squareToAdd = min + incrementValue;
 
   while (squareToAdd < max) {
-    squaresInBetween = squaresInBetween.concat(squareToAdd);
+    squaresInBetween = [...squaresInBetween, squareToAdd];
     squareToAdd += incrementValue;
   }
   // don't forget to check the destination
-  squaresInBetween = squaresInBetween.concat(end);
+  // squaresInBetween = [...squaresInBetween, end];
   console.log(squaresInBetween);
   for (let square of squaresInBetween) {
     if (board[square] !== null) {
@@ -57,4 +61,17 @@ function validMoveColumn(start: number, end: number) {
 
 function validateMoveRow(start: number, end: number) {
   return Math.floor(start / 8) === Math.floor(end / 8);
+}
+
+function capturePiece(
+  piece: ChessPiece,
+  end: number,
+  board: Array<ChessPiece | null>
+): boolean {
+  const target = board[end];
+  if (target && target.isWhite === !piece.isWhite) {
+    return true;
+  } else {
+    return false;
+  }
 }

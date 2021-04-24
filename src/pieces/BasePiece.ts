@@ -1,3 +1,4 @@
+import { ChessPiece } from "./types";
 export enum PieceType {
   Pawn = 1,
   Rook,
@@ -16,5 +17,18 @@ export class BasePiece {
     this.isWhite = isWhite;
     this.symbol = symbol;
     this.PieceType = PieceType.Pawn;
+  }
+}
+
+export function capturePiece(
+  piece: ChessPiece,
+  end: number,
+  board: Array<ChessPiece | null>
+): boolean {
+  const target = board[end];
+  if (target && target.isWhite === !piece.isWhite) {
+    return true;
+  } else {
+    return false;
   }
 }

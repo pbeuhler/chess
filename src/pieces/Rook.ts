@@ -1,4 +1,4 @@
-import { BasePiece, PieceType } from "./BasePiece";
+import { BasePiece, capturePiece, PieceType } from "./BasePiece";
 import { ChessPiece } from "./types";
 
 export class Rook extends BasePiece {
@@ -55,23 +55,10 @@ function detectCollision(
   return false;
 }
 
-function validMoveColumn(start: number, end: number) {
+function validMoveColumn(start: number, end: number): boolean {
   return (start - end) % 8 === 0;
 }
 
-function validateMoveRow(start: number, end: number) {
+function validateMoveRow(start: number, end: number): boolean {
   return Math.floor(start / 8) === Math.floor(end / 8);
-}
-
-function capturePiece(
-  piece: ChessPiece,
-  end: number,
-  board: Array<ChessPiece | null>
-): boolean {
-  const target = board[end];
-  if (target && target.isWhite === !piece.isWhite) {
-    return true;
-  } else {
-    return false;
-  }
 }

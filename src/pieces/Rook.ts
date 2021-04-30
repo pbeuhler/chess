@@ -43,8 +43,6 @@ function detectCollision(
     squaresInBetween = [...squaresInBetween, squareToAdd];
     squareToAdd += incrementValue;
   }
-  // don't forget to check the destination
-  // squaresInBetween = [...squaresInBetween, end];
   console.log(squaresInBetween);
   for (let square of squaresInBetween) {
     if (board[square] !== null) {

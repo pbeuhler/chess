@@ -2,6 +2,7 @@ import { PieceType } from "../pieces/BasePiece";
 import { validatePawn } from "../pieces/Pawn";
 import { validateRook } from "../pieces/Rook";
 import { validateBishop } from "../pieces/Bishop";
+import { validateKnight } from "../pieces/Knight";
 import { ChessPiece } from "../pieces/types";
 
 export function isValidMove(
@@ -18,6 +19,8 @@ export function isValidMove(
       return validateRook(piece, start, end, board);
     case PieceType.Bishop:
       return validateBishop(piece, start, end, board);
+    case PieceType.Knight:
+      return validateKnight(piece, start, end, board);
     default:
       return true;
   }
